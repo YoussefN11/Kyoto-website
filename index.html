@@ -4,98 +4,243 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Why I Love Kyoto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- ========== HERO ========== -->
   <header class="hero">
-    <p class="eyebrow">My Favorite Vacation Spot</p>
-    <h1>Kyoto, Japan</h1>
-    <p class="jp" lang="ja">京都</p>
-    <p class="tagline">Ancient temples, quiet gardens, glowing lanterns, and the best matcha in the world.</p>
-    <span class="hero-emoji" aria-hidden="true">⛩️</span>
+    <nav class="nav">
+      <a href="#top" class="brand">京都 <span>Kyoto</span></a>
+      <div class="nav-links">
+        <a href="#story">My Story</a>
+        <a href="#places">Places</a>
+        <a href="#seasons">Seasons</a>
+        <a href="#why">Why Go</a>
+      </div>
+    </nav>
+
+    <div class="hero-content" id="top">
+      <p class="eyebrow">My Favorite Vacation Spot</p>
+      <h1>Kyoto</h1>
+      <p class="hero-jp" lang="ja">古都・京都</p>
+      <p class="tagline">Ancient temples, quiet gardens, glowing lanterns,<br>and the best matcha in the world.</p>
+      <a href="#story" class="btn">Begin the journey ↓</a>
+    </div>
   </header>
 
-  <nav>
-    <a href="#story">My Story</a>
-    <a href="#places">Must-See Places</a>
-    <a href="#seasons">Seasons</a>
-    <a href="#why">Why Go</a>
-  </nav>
-
   <main>
-    <section id="story">
-      <h2>How Kyoto Stole My Heart</h2>
-      <p>
-        I'll never forget walking through the endless orange gates of Fushimi Inari early in the
-        morning, before the crowds arrived. The only sounds were birds and my own footsteps. Later
-        that week I stood in the Arashiyama bamboo grove listening to the wind move through the
-        stalks, and I felt calmer than I had in years. Kyoto taught me that slowing down can be the
-        best part of a trip.
-      </p>
+
+    <!-- ========== STORY ========== -->
+    <section id="story" class="story">
+      <div class="story-text">
+        <p class="section-label">01 · My Story</p>
+        <h2>How Kyoto Stole My Heart</h2>
+        <p>
+          I'll never forget walking through the endless orange gates of Fushimi Inari early in the
+          morning, before the crowds arrived. The only sounds were birds and my own footsteps.
+        </p>
+        <p>
+          Later that week I stood in the Arashiyama bamboo grove listening to the wind move through
+          the stalks, and I felt calmer than I had in years. Kyoto taught me that slowing down can be
+          the best part of a trip.
+        </p>
+      </div>
+      <figure class="story-photo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Bamboo_Grove%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg/960px-Bamboo_Grove%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg"
+             alt="Tall green bamboo stalks in the Arashiyama bamboo grove">
+        <span class="vertical-jp" lang="ja">竹林の道</span>
+      </figure>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="stats">
+      <div class="stat"><span class="num">1,000+</span><span class="label">years as Japan's capital</span></div>
+      <div class="stat"><span class="num">1,600</span><span class="label">Buddhist temples</span></div>
+      <div class="stat"><span class="num">17</span><span class="label">UNESCO World Heritage sites</span></div>
+      <div class="stat"><span class="num">10,000</span><span class="label">torii gates at Fushimi Inari</span></div>
+    </section>
+
+    <!-- ========== PLACES ========== -->
+    <section id="places" class="places">
+      <p class="section-label">02 · Must-See Places</p>
+      <h2>Where to Wander</h2>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg/960px-Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg"
+                 alt="A path of orange torii gates at Fushimi Inari Taisha" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-jp" lang="ja">伏見稲荷大社</span>
+            <h3>Fushimi Inari Taisha</h3>
+            <p>A mountain path lined with thousands of bright orange torii gates. Go at sunrise for the quietest walk.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Arashiyama-Bamboo-Grove-Sunset.jpg/960px-Arashiyama-Bamboo-Grove-Sunset.jpg"
+                 alt="Sunlight shining through the Arashiyama bamboo grove" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-jp" lang="ja">嵐山</span>
+            <h3>Arashiyama Bamboo Grove</h3>
+            <p>Towering bamboo that sways and creaks in the breeze. It feels like stepping into another world.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day%2C_Kyoto%2C_Japan.jpg/960px-Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day%2C_Kyoto%2C_Japan.jpg"
+                 alt="The Golden Pavilion reflected in its pond" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-jp" lang="ja">金閣寺</span>
+            <h3>Kinkaku-ji</h3>
+            <p>The Golden Pavilion, covered in gold leaf and reflected perfectly in the pond around it.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Shirakara_Canal%2C_Gion%2C_Kyoto.jpg/960px-Shirakara_Canal%2C_Gion%2C_Kyoto.jpg"
+                 alt="Wooden teahouses along the Shirakawa canal in Gion" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-jp" lang="ja">祇園</span>
+            <h3>Gion District</h3>
+            <p>Old wooden teahouses and lantern-lit lanes, where you might spot a geiko or maiko at dusk.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Nishiki_Market%2C_Kyoto_-_Flickr_-_Sergiy_Galyonkin.jpg/960px-Nishiki_Market%2C_Kyoto_-_Flickr_-_Sergiy_Galyonkin.jpg"
+                 alt="Food stalls inside Nishiki Market" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-jp" lang="ja">錦市場</span>
+            <h3>Nishiki Market</h3>
+            <p>"Kyoto's Kitchen": five blocks of pickles, mochi, matcha sweets, skewers, and fresh seafood.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Japanese_cup_of_matcha_during_the_tea_ceremony.jpg/960px-Japanese_cup_of_matcha_during_the_tea_ceremony.jpg"
+                 alt="A bowl of green matcha during a tea ceremony" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-jp" lang="ja">茶道</span>
+            <h3>Tea Ceremony</h3>
+            <p>Kyoto is the home of matcha from nearby Uji. A tea ceremony is a calm, beautiful ritual worth trying.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== QUOTE BAND ========== -->
+    <section class="quote-band">
       <blockquote>
         "In Kyoto, even an ordinary street feels like it has a thousand years of stories."
       </blockquote>
     </section>
 
-    <section id="places">
-      <h2>Must-See Places</h2>
-      <div class="cards">
-        <article class="card">
-          <span class="icon" aria-hidden="true">⛩️</span>
-          <h3>Fushimi Inari Taisha</h3>
-          <p>A mountain path lined with around 10,000 bright orange torii gates. Go at sunrise for the quietest walk.</p>
-        </article>
-        <article class="card">
-          <span class="icon" aria-hidden="true">🎋</span>
-          <h3>Arashiyama Bamboo Grove</h3>
-          <p>Towering bamboo that sways and creaks in the breeze. It feels like stepping into another world.</p>
-        </article>
-        <article class="card">
-          <span class="icon" aria-hidden="true">🏯</span>
-          <h3>Kinkaku-ji</h3>
-          <p>The Golden Pavilion, covered in gold leaf and reflected perfectly in the pond around it.</p>
-        </article>
-        <article class="card">
-          <span class="icon" aria-hidden="true">🏮</span>
-          <h3>Gion District</h3>
-          <p>Old wooden teahouses and lantern-lit lanes, where you might spot a geiko or maiko at dusk.</p>
-        </article>
-        <article class="card">
-          <span class="icon" aria-hidden="true">🍡</span>
-          <h3>Nishiki Market</h3>
-          <p>"Kyoto's Kitchen": five blocks of pickles, mochi, matcha sweets, skewers, and fresh seafood.</p>
-        </article>
-        <article class="card">
-          <span class="icon" aria-hidden="true">🍵</span>
-          <h3>Tea Ceremony</h3>
-          <p>Kyoto is the home of matcha from nearby Uji. A tea ceremony is a calm, beautiful ritual worth trying.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="seasons">
+    <!-- ========== SEASONS ========== -->
+    <section id="seasons" class="seasons-section">
+      <p class="section-label">03 · Seasons</p>
       <h2>A Different City Every Season</h2>
+
       <div class="seasons">
-        <div class="season spring"><span aria-hidden="true">🌸</span><h3>Spring</h3><p>Cherry blossoms along the Philosopher's Path.</p></div>
-        <div class="season summer"><span aria-hidden="true">🎐</span><h3>Summer</h3><p>The Gion Matsuri festival and riverside dining.</p></div>
-        <div class="season autumn"><span aria-hidden="true">🍁</span><h3>Autumn</h3><p>Fiery red maple leaves around every temple.</p></div>
-        <div class="season winter"><span aria-hidden="true">❄️</span><h3>Winter</h3><p>Snow on golden rooftops and quiet streets.</p></div>
+        <div class="season">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cherry_Blossom_%40_Philosopher%27s_Path_%2CKyoto_-_panoramio.jpg/960px-Cherry_Blossom_%40_Philosopher%27s_Path_%2CKyoto_-_panoramio.jpg"
+               alt="Cherry blossoms along the Philosopher's Path" loading="lazy">
+          <div class="season-text">
+            <span lang="ja">春</span>
+            <h3>Spring</h3>
+            <p>Cherry blossoms along the Philosopher's Path.</p>
+          </div>
+        </div>
+        <div class="season">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Minami_Kannonyama_Gion_Matsuri_Yoiyama.jpg/960px-Minami_Kannonyama_Gion_Matsuri_Yoiyama.jpg"
+               alt="Glowing paper lanterns on a Gion Matsuri festival float" loading="lazy">
+          <div class="season-text">
+            <span lang="ja">夏</span>
+            <h3>Summer</h3>
+            <p>The Gion Matsuri festival and riverside dining.</p>
+          </div>
+        </div>
+        <div class="season">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg/960px-Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg"
+               alt="Red autumn leaves around Kiyomizu-dera temple" loading="lazy">
+          <div class="season-text">
+            <span lang="ja">秋</span>
+            <h3>Autumn</h3>
+            <p>Fiery red maple leaves around every temple.</p>
+          </div>
+        </div>
+        <div class="season">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/%E9%9B%AA%E3%81%AE%E9%87%91%E9%96%A3%E5%AF%BA_Kinkakuji_temple_in_snow_%285360759256%29.jpg/960px-%E9%9B%AA%E3%81%AE%E9%87%91%E9%96%A3%E5%AF%BA_Kinkakuji_temple_in_snow_%285360759256%29.jpg"
+               alt="The Golden Pavilion covered in snow" loading="lazy">
+          <div class="season-text">
+            <span lang="ja">冬</span>
+            <h3>Winter</h3>
+            <p>Snow on golden rooftops and quiet streets.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="why">
+    <!-- ========== WHY ========== -->
+    <section id="why" class="why">
+      <p class="section-label">04 · Why Go</p>
       <h2>Why You'll Love It Too</h2>
-      <ul class="reasons">
-        <li><strong>Living history.</strong> Kyoto was Japan's capital for over 1,000 years and has more than 1,600 temples and 17 UNESCO World Heritage sites.</li>
-        <li><strong>Peace and quiet.</strong> Zen rock gardens and mossy temple grounds make it easy to slow down and breathe.</li>
-        <li><strong>Amazing food.</strong> From street snacks to kaiseki, a traditional multi-course meal, every bite is made with care.</li>
-        <li><strong>Something for everyone.</strong> History lovers, foodies, photographers, and nature fans all find their favorite corner.</li>
-      </ul>
+      <ol class="reasons">
+        <li>
+          <h3>Living history</h3>
+          <p>Kyoto was Japan's capital for over 1,000 years and is full of temples, shrines, and old wooden streets.</p>
+        </li>
+        <li>
+          <h3>Peace and quiet</h3>
+          <p>Zen rock gardens and mossy temple grounds make it easy to slow down and breathe.</p>
+        </li>
+        <li>
+          <h3>Amazing food</h3>
+          <p>From street snacks to kaiseki, a traditional multi-course meal, every bite is made with care.</p>
+        </li>
+        <li>
+          <h3>Something for everyone</h3>
+          <p>History lovers, foodies, photographers, and nature fans all find their favorite corner.</p>
+        </li>
+      </ol>
     </section>
   </main>
 
+  <!-- ========== FOOTER ========== -->
   <footer>
-    <p>Made with 🍵 and lots of travel daydreams &middot; 2026</p>
+    <p class="footer-jp" lang="ja">また会いましょう</p>
+    <p>"See you again," Kyoto. Made with 🍵 and lots of travel daydreams · 2026</p>
+    <details class="credits">
+      <summary>Photo credits</summary>
+      <p>
+        All photos from Wikimedia Commons:
+        Basile Morin (CC BY-SA 4.0): Yasaka-dori, bamboo grove, Fushimi Inari, Kinkaku-ji, double torii ·
+        Bjørn Christian Tørrissen (CC BY-SA 4.0): Arashiyama sunset ·
+        MichaelMaggs (CC BY-SA 2.5): Gion ·
+        Sergiy Galyonkin (CC BY-SA 2.0): Nishiki Market ·
+        WorldContributor (CC BY-SA 4.0): matcha ·
+        ::::=UT=:::: (CC BY-SA 3.0): Philosopher's Path ·
+        Sakurai Midori (CC BY-SA 3.0): Gion Matsuri ·
+        Martin Falbisoner (CC BY-SA 4.0): Kiyomizu-dera ·
+        Takeshi Kuboki (CC BY 2.0): Kinkaku-ji in snow.
+      </p>
+    </details>
   </footer>
+
 </body>
 </html>

@@ -1,12 +1,17 @@
+/* ===== Colors & fonts ===== */
 :root {
   --torii: #c8402b;
   --torii-dark: #8f2a1c;
-  --matcha: #6b8e4e;
-  --sakura: #f4c6cf;
-  --paper: #faf6ef;
-  --ink: #2b2522;
   --gold: #c9a24a;
+  --matcha: #5f7f45;
+  --paper: #f7f2ea;
+  --paper-dark: #ece4d6;
+  --ink: #1e1a18;
+  --ink-soft: #5a524c;
   --white: #ffffff;
+
+  --serif: "Shippori Mincho", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,168 +19,354 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--sans);
   color: var(--ink);
   background: var(--paper);
   line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Hero */
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+h1, h2, h3 { font-family: var(--serif); line-height: 1.15; }
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--torii);
+  margin-bottom: 0.8rem;
+}
+
+section { padding: 6rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+
+/* ===== Hero ===== */
 .hero {
   position: relative;
-  text-align: center;
-  padding: 5rem 1.5rem 6rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   color: var(--white);
   background:
-    radial-gradient(circle at 80% 20%, rgba(244, 198, 207, 0.35), transparent 40%),
-    linear-gradient(160deg, var(--torii-dark) 0%, var(--torii) 100%);
-  overflow: hidden;
+    linear-gradient(180deg, rgba(20, 12, 8, 0.55) 0%, rgba(20, 12, 8, 0.45) 45%, rgba(20, 12, 8, 0.75) 100%),
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Yasaka-dori_early_morning_with_street_lanterns_and_the_Tower_of_Yasaka_%28Hokan-ji_Temple%29%2C_Kyoto%2C_Japan.jpg/1920px-Yasaka-dori_early_morning_with_street_lanterns_and_the_Tower_of_Yasaka_%28Hokan-ji_Temple%29%2C_Kyoto%2C_Japan.jpg")
+    center / cover no-repeat;
 }
-.hero::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: -1px;
-  height: 50px;
-  background: var(--paper);
-  clip-path: polygon(0 100%, 100% 100%, 100% 0, 50% 80%, 0 0);
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
+}
+.brand {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  text-decoration: none;
+}
+.brand span {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-left: 0.4rem;
+  opacity: 0.8;
+}
+.nav-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.85;
+  border-bottom: 1px solid transparent;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.nav-links a:hover { opacity: 1; border-color: var(--gold); }
+
+.hero-content {
+  margin: auto;
+  text-align: center;
+  padding: 2rem 1.5rem 6rem;
+  animation: rise 1.2s ease-out both;
 }
 .eyebrow {
-  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  font-size: 0.8rem;
-  opacity: 0.85;
-}
-.hero h1 {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  margin-top: 0.4rem;
-  letter-spacing: 0.02em;
-}
-.jp {
-  font-size: 1.6rem;
-  letter-spacing: 0.4em;
-  margin-bottom: 0.8rem;
-  opacity: 0.9;
-}
-.tagline { font-size: 1.15rem; max-width: 36rem; margin: 0 auto; }
-.hero-emoji {
-  display: inline-block;
-  font-size: 3.5rem;
-  margin-top: 1.5rem;
-  animation: float 4s ease-in-out infinite;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-/* Nav */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  padding: 0.9rem 1rem;
-  background: rgba(250, 246, 239, 0.95);
-  border-bottom: 2px solid var(--torii);
-  font-family: system-ui, sans-serif;
-}
-nav a {
-  color: var(--torii-dark);
-  text-decoration: none;
+  color: var(--gold);
   font-weight: 600;
 }
-nav a:hover { color: var(--matcha); }
-
-/* Sections */
-main { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
-section { padding: 3.5rem 0; }
-h2 {
-  color: var(--torii-dark);
-  font-size: 1.9rem;
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 3px solid var(--gold);
+.hero h1 {
+  font-size: clamp(4.5rem, 16vw, 10rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+}
+.hero-jp {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  letter-spacing: 0.6em;
+  margin: 0.2rem 0 1.5rem;
+  opacity: 0.9;
+}
+.tagline {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  max-width: 36rem;
+  margin: 0 auto 2.5rem;
+  opacity: 0.92;
+}
+.btn {
   display: inline-block;
+  padding: 0.9rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.3s, color 0.3s;
 }
-section p { font-size: 1.08rem; }
+.btn:hover { background: var(--white); color: var(--ink); }
 
-blockquote {
-  margin-top: 1.5rem;
-  padding: 1.2rem 1.5rem;
-  border-left: 5px solid var(--matcha);
-  background: var(--white);
-  border-radius: 0 12px 12px 0;
-  font-style: italic;
-  color: var(--matcha);
+@keyframes rise {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Place cards */
+/* ===== Story ===== */
+.story {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+.story-text p:not(.section-label) {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.2rem;
+}
+.story h2 { margin-bottom: 1.5rem; }
+.story-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  overflow: visible;
+}
+.story-photo img {
+  border-radius: 4px;
+  box-shadow: 0 30px 60px rgba(30, 26, 24, 0.25);
+}
+.story-photo::before {
+  content: "";
+  position: absolute;
+  inset: 1.5rem -1.5rem -1.5rem 1.5rem;
+  border: 2px solid var(--torii);
+  border-radius: 4px;
+  z-index: -1;
+}
+.vertical-jp {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  writing-mode: vertical-rl;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--white);
+  background: var(--torii);
+  padding: 0.8rem 0.4rem;
+}
+
+/* ===== Stats ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 3.5rem 1.5rem;
+  border-top: 1px solid var(--paper-dark);
+  border-bottom: 1px solid var(--paper-dark);
+}
+.stat { text-align: center; }
+.stat .num {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--torii);
+}
+.stat .label {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ===== Place cards ===== */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 .card {
   background: var(--white);
-  padding: 1.5rem;
-  border-radius: 14px;
-  border-top: 5px solid var(--torii);
-  box-shadow: 0 4px 14px rgba(43, 37, 34, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(30, 26, 24, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 24px rgba(43, 37, 34, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(30, 26, 24, 0.16);
 }
-.card .icon { font-size: 2rem; }
-.card h3 { color: var(--torii); margin: 0.5rem 0; }
-.card p { font-size: 0.98rem; }
+.card-img { aspect-ratio: 4 / 3; overflow: hidden; }
+.card-img img { transition: transform 0.8s ease; }
+.card:hover .card-img img { transform: scale(1.08); }
+.card-body { padding: 1.5rem 1.6rem 1.9rem; }
+.card-jp {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  color: var(--torii);
+  letter-spacing: 0.15em;
+}
+.card h3 { font-size: 1.45rem; margin: 0.3rem 0 0.6rem; }
+.card p { font-size: 0.97rem; color: var(--ink-soft); }
 
-/* Seasons */
+/* ===== Quote band ===== */
+.quote-band {
+  max-width: none;
+  padding: 9rem 1.5rem;
+  text-align: center;
+  color: var(--white);
+  background:
+    linear-gradient(rgba(20, 12, 8, 0.55), rgba(20, 12, 8, 0.55)),
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Double_torii_path_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg/1920px-Double_torii_path_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg")
+    center / cover fixed;
+}
+.quote-band blockquote {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 700;
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* ===== Seasons ===== */
 .seasons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 .season {
-  padding: 1.5rem;
-  border-radius: 14px;
-  text-align: center;
-}
-.season span { font-size: 2.2rem; }
-.season h3 { margin: 0.3rem 0; }
-.season p { font-size: 0.98rem; }
-.spring { background: #fbe3e8; }
-.summer { background: #dff0e0; }
-.autumn { background: #f8dccb; }
-.winter { background: #e3ebf3; }
-
-/* Reasons */
-.reasons { list-style: none; }
-.reasons li {
   position: relative;
-  padding: 1rem 1rem 1rem 3rem;
-  margin-bottom: 0.9rem;
+  aspect-ratio: 3 / 4.5;
+  border-radius: 6px;
+  overflow: hidden;
+  color: var(--white);
+}
+.season img { transition: transform 0.8s ease; }
+.season:hover img { transform: scale(1.08); }
+.season::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(10, 6, 4, 0.85) 100%);
+}
+.season-text {
+  position: absolute;
+  left: 1.4rem;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  z-index: 1;
+}
+.season-text span {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--gold);
+}
+.season-text h3 { font-size: 1.4rem; margin: 0.3rem 0; }
+.season-text p { font-size: 0.92rem; opacity: 0.9; }
+
+/* ===== Why ===== */
+.reasons {
+  list-style: none;
+  counter-reset: reason;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.reasons li {
+  counter-increment: reason;
+  position: relative;
+  padding: 2rem 2rem 2rem 5.5rem;
   background: var(--white);
-  border-radius: 12px;
+  border-radius: 6px;
+  border-left: 4px solid var(--torii);
 }
 .reasons li::before {
-  content: "🌸";
+  content: "0" counter(reason);
   position: absolute;
-  left: 1rem;
-  top: 1rem;
+  left: 1.6rem;
+  top: 1.7rem;
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
 }
-.reasons strong { color: var(--matcha); }
+.reasons h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+.reasons p { color: var(--ink-soft); }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 4rem 1.5rem 3rem;
   background: var(--ink);
-  color: var(--paper);
-  font-family: system-ui, sans-serif;
+  color: var(--paper-dark);
+  font-size: 0.95rem;
+}
+.footer-jp {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.credits {
+  max-width: 48rem;
+  margin: 2rem auto 0;
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+.credits summary { cursor: pointer; margin-bottom: 0.6rem; }
+
+/* ===== Phones & tablets ===== */
+@media (max-width: 900px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .seasons { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); row-gap: 2rem; }
+  .quote-band { background-attachment: scroll; }
+}
+@media (max-width: 640px) {
+  section { padding: 4.5rem 1.25rem; }
+  .story { grid-template-columns: 1fr; }
+  .story-photo { max-width: 420px; margin: 0 auto 1.5rem; }
+  .cards, .reasons { grid-template-columns: 1fr; }
+  .nav { justify-content: center; }
+  .nav-links { gap: 1.2rem; justify-content: center; }
 }
