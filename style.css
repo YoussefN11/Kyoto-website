@@ -1,0 +1,181 @@
+:root {
+  --torii: #c8402b;
+  --torii-dark: #8f2a1c;
+  --matcha: #6b8e4e;
+  --sakura: #f4c6cf;
+  --paper: #faf6ef;
+  --ink: #2b2522;
+  --gold: #c9a24a;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 5rem 1.5rem 6rem;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 80% 20%, rgba(244, 198, 207, 0.35), transparent 40%),
+    linear-gradient(160deg, var(--torii-dark) 0%, var(--torii) 100%);
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 50px;
+  background: var(--paper);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 50% 80%, 0 0);
+}
+.eyebrow {
+  font-family: system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  margin-top: 0.4rem;
+  letter-spacing: 0.02em;
+}
+.jp {
+  font-size: 1.6rem;
+  letter-spacing: 0.4em;
+  margin-bottom: 0.8rem;
+  opacity: 0.9;
+}
+.tagline { font-size: 1.15rem; max-width: 36rem; margin: 0 auto; }
+.hero-emoji {
+  display: inline-block;
+  font-size: 3.5rem;
+  margin-top: 1.5rem;
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Nav */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 0.9rem 1rem;
+  background: rgba(250, 246, 239, 0.95);
+  border-bottom: 2px solid var(--torii);
+  font-family: system-ui, sans-serif;
+}
+nav a {
+  color: var(--torii-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a:hover { color: var(--matcha); }
+
+/* Sections */
+main { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+section { padding: 3.5rem 0; }
+h2 {
+  color: var(--torii-dark);
+  font-size: 1.9rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--gold);
+  display: inline-block;
+}
+section p { font-size: 1.08rem; }
+
+blockquote {
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  border-left: 5px solid var(--matcha);
+  background: var(--white);
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: var(--matcha);
+}
+
+/* Place cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 14px;
+  border-top: 5px solid var(--torii);
+  box-shadow: 0 4px 14px rgba(43, 37, 34, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(43, 37, 34, 0.15);
+}
+.card .icon { font-size: 2rem; }
+.card h3 { color: var(--torii); margin: 0.5rem 0; }
+.card p { font-size: 0.98rem; }
+
+/* Seasons */
+.seasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.season {
+  padding: 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+}
+.season span { font-size: 2.2rem; }
+.season h3 { margin: 0.3rem 0; }
+.season p { font-size: 0.98rem; }
+.spring { background: #fbe3e8; }
+.summer { background: #dff0e0; }
+.autumn { background: #f8dccb; }
+.winter { background: #e3ebf3; }
+
+/* Reasons */
+.reasons { list-style: none; }
+.reasons li {
+  position: relative;
+  padding: 1rem 1rem 1rem 3rem;
+  margin-bottom: 0.9rem;
+  background: var(--white);
+  border-radius: 12px;
+}
+.reasons li::before {
+  content: "🌸";
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+.reasons strong { color: var(--matcha); }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: system-ui, sans-serif;
+}
